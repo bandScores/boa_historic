@@ -4,14 +4,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  // Use relative base path so the site works regardless of the repository name
+  base: './',
   build: {
     outDir: 'dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: './index.html',
-      },
-    },
-  },
+    emptyOutDir: true
+  }
 });
